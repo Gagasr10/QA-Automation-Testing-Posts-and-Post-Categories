@@ -1,0 +1,1710 @@
+ADD POST -> PISANJE TC
+
+TC01  
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts/add , insert empty "" in every possible column.. in Tag section 
+we uncheck everything, click on 'Save'.
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts/add
+2. In column Category we do not choose anything
+3. In field Title  keep empty
+4. In field Description keep empty field
+5. In Important section we leave on 'No' as option
+6. In Tags section we uncheck everything
+7. Click on Save
+ 
+
+Expected result:
+We expect multiply errors , error messages for columns : 'Title', 'Description'...
+
+Actual result:
+We we got an error on several fields such as : 'Title' , 'Description', 'Tags', 
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC02
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts/add , insert empty "" in every possible column.. in Tag section 
+we uncheck everything, click on 'Cancel'.
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts/add
+2. In column Category we do not choose anything
+3. In field Title  keep empty
+4. In field Description keep empty field
+5. In Important section we leave on 'No' as option
+6. In Tags section we uncheck everything
+7. Click on Cancel
+ 
+
+Expected result:
+We expect to be on page https://testblog.kurs-qa.cubes.edu.rs/admin/posts  (Post List)
+
+Actual result:
+We appeared on the page https://testblog.kurs-qa.cubes.edu.rs/admin/posts  (Post List)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC03
+Description: Select one of option in Category section
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts/add
+2. In column Category we choose one of option -> 1st one
+3. In field Title  keep empty field
+4. In field Description keep empty field
+5. In Important section we leave on 'No' as option
+6. In Tags section we uncheck everything
+7. Click on Save
+ 
+
+Expected result:
+We expect multiply errors ,  error messages for columns : 'Description', Tags
+
+Actual result:
+We get multiply errors ,  error messages for columns : 'Description', Tags
+
+TC Status
+Success
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC03
+Description: Select one of option in Category section
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts/add
+2. In column Category we choose one of option -> 1st one
+3. 3. In field Title  keep empty
+4. In field Description keep empty field
+5. In Important section we leave on 'No' as option
+6. In Tags section we uncheck everything
+7. Click on Save
+ 
+
+Expected result:
+We expect multiply errors ,  error messages for columns :'Title', 'Description', Tags
+
+Actual result:
+We get multiply errors ,  error messages for columns : 'Description', Tags
+
+TC Status
+Success
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC04
+Description: Select one of option in Category section, enter something in Title field
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts/add
+2. In column Category we choose one of option -> 1st one
+3. 3. In field Title  enter one letter
+4. In field Description keep empty field
+5. In Important section we leave on 'No' as option
+6. In Tags section we uncheck everything
+7. Click on Save
+ 
+
+Expected result:
+We expect multiply errors ,  error messages for columns :  'Description', Tags
+
+Actual result:
+We get multiply errors ,  error messages for columns : 'Description', Tags, but also from 'Title' field which said to us that we need to put 
+at least 20 characters. We need to catch these in assertion
+
+TC Status
+Success
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC05
+Description: Select one of option in Category section, enter something in Title field
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts/add
+2. In column Category we choose one of option -> 1st one
+3. 3. In field Title we enter 19 letters -> try boundary testing
+4. In field Description keep empty field
+5. In Important section we leave on 'No' as option
+6. In Tags section we uncheck everything
+7. Click on Save
+ 
+
+Expected result:
+We expect multiply errors ,  error messages for columns :  'Description', Tags, also from field because we enter 19characters instead 20th.
+
+Actual result:
+We get multiply errors ,  error messages for columns : 'Description', Tags, but also from 'Title' field which said to us that we need to put 
+at least 20 characters.
+
+TC Status
+Success
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC06
+Description: Select one of option in Category section, enter something in Title field
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts/add
+2. In column Category we choose one of option -> 1st one
+3. 3. In field Title we enter 20 letters 
+4. In field Description keep empty field
+5. In Important section we leave on 'No' as option
+6. In Tags section we uncheck everything
+7. Click on Save
+ 
+
+Expected result:
+We expect multiply errors ,  error messages for columns :  'Description', Tags, also from field Title we don't expect any errors, because we
+type exactly 20 characters	.
+
+Actual result:
+We get multiply errors ,  error messages for columns : 'Description', Tags, also Title field is not mark in red colour anymore
+
+TC Status
+Success
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC07
+Description: Select one of option in Category section, enter something in Title field and in Description
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts/add
+2. In column Category we choose one of option -> 1st one
+3. 3. In field Title we enter 20 letters -> try boundary
+4. In field Description we type several characters
+5. In Important section we leave on 'No' as option
+6. In Tags section we uncheck everything
+7. Click on Save
+ 
+
+Expected result:
+We expect error,  error messages for column: Tags
+
+Actual result:
+We get multiply errors ,  error messages for columns : 'Description', Tags, for Description it said that we need 50 characters
+
+TC Status
+Success
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC08
+
+Description: Select one of option in Category section, enter something in Title field
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts/add
+2. In column Category we choose one of option -> 1st one
+3. 3. In field Title we enter 20 letters
+4. In field Description we type 49 characters to try boundary
+5. In Important section we leave on 'No' as option
+6. In Tags section we uncheck everything
+7. Click on Save
+ 
+
+Expected result:
+We expect error,  error messages for column: Tags and Description 
+
+Actual result:
+We get multiply errors ,  error messages for columns : 'Description', Tags, for Description it said that we need 50 characters
+
+TC Status
+Success
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC08
+
+Description: Select one of option in Category section, enter some values in fields Title, Description...
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts/add
+2. In column Category we choose one of option -> 1st one
+3. In field Title we enter 20 letters
+4. In field Description we type 50 characters 
+5. In Important section we leave on 'No' as option
+6. In Tags section we uncheck everything
+7. Click on Save
+ 
+
+Expected result:
+We expect error messages for Tags  
+
+Actual result:
+We get error message for Tags
+
+TC Status
+Success
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC09 
+
+Description: Don't select anything in category, in other fields we are putting some values. At end click on 'Saves'
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. click on 'Add new Post'
+3. In column Category we do not chose anything
+4.. In field Title we enter 20 letters
+5. In field Description we type 50 characters 
+6. In Important section we leave on 'No' as option
+7. In Tags section we check some of tags (Default TAG NE BRISATI)
+8. Click on Save
+ 
+
+Expected result:
+We expect error messages for not selected any option in Choose Category 
+
+Actual result:
+We get error for field 'Content' but not for Category so we can this report to the team
+
+TC Status
+Success
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC10 
+Description: Don't select anything in category, in other fields we are putting some values and also we put some text in
+'content' field, at end click on 'Saves'
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts/add
+2. In column Category we do not chose anything
+3. In field Title we enter 20 letters
+4. In field Description we type 50 characters 
+5. In Important section we leave on 'No' as option
+6. In Tags section we check some of tag (Default TAG NE BRISATI)
+8. In Content we put some text -> 'proba'
+7. Click on Save
+ 
+
+Expected result:
+We expect error messages for not selected any option in Choose Category 
+
+Actual result:
+We actualy created post and our post is on postList ( https://testblog.kurs-qa.cubes.edu.rs/admin/posts)
+
+TC Status
+Success
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC11
+
+Description: We are select some in chose Category, in other fields we are putting some values , for important we are checking 'Yes' and 
+we uncheck all tags. We want to see if we set as important and on the other hand, turn off one of the mandatory parameters, whether we will
+be able to record the post. At end click on 'Save'
+
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts/add
+2. In column Category we chose 1st option
+3. In field Title we enter 20 letters
+4. In field Description we type 50 characters 
+5. In Important section we leave on 'Yes' as option
+6. In Tags section we uncheck all tags 
+7. In Content we put some text -> 'proba'
+8. Click on Save
+ 
+
+Expected result:
+We expect error messages for not selected any of Tags
+
+Actual result:
+We get error message for not selected any of Tags -> "This field is required."
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC 12
+
+Description: We are going to create another post, select some in chose Category, in other fields we are putting some values , for important 
+we are checking 'Yes' and we check one of tags  We want to see if we set as important and on the other hand, and all other condition 
+we fullfield, are we able to create post
+
+
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts/add
+2. In column Category we chose one of option
+3. In field Title we enter 20 letters
+4. In field Description we type 50 characters 
+5. In Important section we leave on 'Yes' as option
+6. In Tags section check one of tags 
+7. In Content we put some text -> 'proba'
+8. Click on Save
+ 
+
+Expected result:
+We expect to create post
+
+Actual result:
+We are create another post
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC 13
+
+Description: We are going to create another post, dont select anything in Choose Category, in other fields we are putting some values, 
+for important we are checking 'Yes' and we check all of tags .
+
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts/add
+2. In column Category we don't choose anything
+3. In field Title we enter 20 letters
+4. In field Description we type 50 characters 
+5. In Important section we leave on 'Yes' as option
+6. In Tags section we check all of tags 
+7. We add photo 
+8. In Content we put some text -> 'proba'
+9. Click on Save
+ 
+
+Expected result:
+We expect to create post with all possible tags 
+
+Actual result:
+We are create another post with all possible tags and with added photo
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC 14 (ovo je update post section)
+
+
+Description: We are select some in chose Category, in other fields we are putting some values , for important we are checking 'Yes' and 
+we check on of tags (random 3th). In section Choose New Photo we upload , click on 'Cancel'
+
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. In column Category we chose 1st option
+3. In field Title we enter 20 letters
+4. In field Description we type 50 characters 
+5. In Important section we leave on 'Yes' as option
+6. In Tags section we uncheck all tags 
+7. In section 'Choose New Photo' we select one of photo 
+8. In Content we put some text -> 'proba'
+9. Click on Cancel
+ 
+
+Expected result:
+We expect to see post in postList , URL : https://testblog.kurs-qa.cubes.edu.rs/admin/posts , without upload new photo
+
+Actual result:
+Post are in post list , on page https://testblog.kurs-qa.cubes.edu.rs/admin/posts , without upload new photo
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC 15
+Description: We are select some in chose Category, in other fields we are putting some values , for important we are checking 'Yes' and 
+we check on of tags (random 3th). In section Choose New Photo we upload , click on 'Save'
+
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. In column Category we chose 1st option
+3. In field Title we enter 20 letters
+4. In field Description we type 50 characters 
+5. In Important section we leave on 'Yes' as option
+6. In Tags section we uncheck all tags 
+7. In section 'Choose New Photo' we select one of photo 
+8. In Content we put some text -> 'proba'
+9. Click on Save
+ 
+
+Expected result:
+We expect to see post in postList , URL : https://testblog.kurs-qa.cubes.edu.rs/admin/posts , with upload new photo
+
+Actual result:
+Post are in post list , on page https://testblog.kurs-qa.cubes.edu.rs/admin/posts , with upload new photo
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC 16
+Description: We are selected 4th option in 'Choose Category' , in Title we put name of another post.
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. In column Category we chose 4st option
+3. In field Title we enter name of another post
+4. In field Description we type 50 characters 
+5. In Important section we leave on 'Yes' as option
+6. In Tags section we select one tag
+7. In Content we put some text -> 'proba'
+8. Click on Save
+ 
+
+Expected result:
+We expect to see error message because we use name of another post
+
+Actual result:
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+TC18
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , in Title field enter some text like 'proba'
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. in Title field enter some text like 'proba'
+3. In other fields we leave everything empty
+
+Expected result:
+We expect to see empty post list , because we search by name which does not exist
+
+Actual result 
+We have empty list of post, we don't see any post in page https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC19
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , in Title field enter name of post (newPost)
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. in Title field enter name of post (newPost)
+3. In other fields we leave everything empty
+
+Expected result:
+We expect to see one post in list -> newPost
+
+Actual result 
+We have one post in list -> newPost
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC20
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , in Title field enter name of post (newPost), in 'Author' field we
+pick 2th option
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. in Title field enter name of post (newPost)
+3. In Author field we pick 2th option -> 'Vladan Dzulovic'
+4. In other fields we leave everything empty
+
+Expected result:
+We expect to see no post in list 
+
+Actual result 
+We don't have any post in list
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC21
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , in Title field enter name of post (newPost), in 'Author' field we
+pick "Marko Dragonjic"
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. in Title field enter name of post (newPost)
+3. In Author field we pick 2th option -> 'Marko Dragonjic'
+4. In other fields we leave everything empty
+
+Expected result:
+We expect to see no post in list 
+
+Actual result 
+We don't have any post in list
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC22 
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , in Title field enter name of post (newPost), in 'Author' field we
+pick option 'Bla'
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. in Title field enter name of post (newPost)
+3. In Author field we pick 3th option -> 'Bla'
+4. In other fields we leave everything empty
+
+Expected result:
+We expect to see no post in list 
+
+Actual result 
+We don't have any post in list
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC23 -> cini se da je visak
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , in Title field enter name of post (newPost), in 'Author' field we
+pick 'Resset Pass User NE BRISATI ' option
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. in Title field enter name of post (newPost)
+3. In Author field we pick 4th option -> 'Resset Pass User NE BRISATI '
+4. In other fields we leave everything empty
+
+Expected result:
+We expect to see no post in list
+
+Actual result 
+We don't have any post in list
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC24
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , in Title field enter name of post (newPost), in 'Author' field we
+pick 'MihailQa'
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. in Title field enter name of post (newPost)
+3. In Author field we pick 5th option -> 'MihailQa'
+4. In other fields we leave everything empty
+
+Expected result:
+We expect to see no post in list
+
+Actual result 
+We don't have any post in list
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC25
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , in Title field enter name of post (newPost), in 'Author' field we
+pick 1st option -> 'Polaznik Kursa'
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. in Title field enter name of post (newPost)
+3. In Author field we pick 1st option -> 'Polaznik Kursa '
+4. In other fields we leave everything empty
+
+Expected result:
+We expect to see one post in list -> newPost
+
+Actual result 
+We have one post in list -> newPost
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC26
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , in Title field enter name of post (newPost), in 'Author' 
+section choose 'Polaznik Kursa'  in 'Category'
+ we choose don't choose any (UNCATEGORIZED)
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. in Title field enter name of post (newPost)
+3. in 'Author' section choose 'Polaznik Kursa'
+4 In Category we dont choose anything -> we go as 'UNCATEGORIZED'
+5. In other fields we leave everything empty
+
+Expected result:
+We expect to see one post in list -> newPost
+
+Actual result 
+We have one post in list -> newPost
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC27
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , in Title field enter name of post (newPost), in 'Author' 
+section choose 'Polaznik Kursa' ,in 'Category' we choose one of option which is not category we used for creating post
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. in Title field enter name of post (newPost)
+3. in 'Author' section choose 'Polaznik Kursa'
+4. In Category we choose one of option which is not category we used for creating post
+5. In other fields we leave everything empty
+
+Expected result:
+We don't expect to see one post in list -
+
+Actual result 
+We have empty post list
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC28
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , in Title field enter name of post (newPost), in 'Author' field we
+pick 1st option -> 'Polaznik Kursa', in 'Category' we choose one of option which is not category we used for creating post
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. in Title field enter name of post (newPost)
+3. In Author field we pick 1st option -> 'Polaznik Kursa '
+4. In Category we choose one of option which is not category we used for creating post
+5. In other fields we leave everything empty
+
+Expected result:
+We don't expect to see one post in list -
+
+Actual result 
+We have empty post list
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+TC29
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , in Title field enter name of post (newPost), in 'Author' field we
+pick 1st option -> 'Polaznik Kursa', in 'Category' we choose option which we use for creating post
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. in Title field enter name of post (newPost)
+3. In Author field we pick 1st option -> 'Polaznik Kursa '
+4. In Category we choose option which we use for creating post 
+5. In other fields we leave everything empty
+
+Expected result:
+We expect to see one post in list -> newPost
+
+Actual result 
+We have one post in list -> newPost
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC30
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , in Title field we leave empty field, in 'Author' field we
+pick 1st option -> 'Polaznik Kursa', in 'Category' we choose option which we use for creating post
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. in Title field we leave empty
+3. In Author field we pick 1st option -> 'Polaznik Kursa '
+4. In Category we choose option which we use for creating post 
+5. In other fields we leave everything empty
+
+Expected result:
+We expect to see one post in list -> newPost
+
+Actual result 
+We have one post in list -> newPost
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC31
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , in Title field we type on of key word of name of post in 'Author' field 
+we pick 1st option -> 'Polaznik Kursa', in 'Category' we choose option which we use for creating post
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. in Title we type on of key word of name of post-> POST
+3. In Author field we pick 1st option -> 'Polaznik Kursa '
+4. In Category we choose option which we use for creating post -> 'Default Post Category NE BRISATI'
+5. In other fields we leave everything empty
+
+Expected result:
+We expect to see one post in list -> newPost
+
+Actual result 
+We have one post in list -> newPost
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC32
+
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , in Title field we type one letter of total name of post,in 'Author' field 
+we pick 1st option -> 'Polaznik Kursa', in 'Category' we choose option which we use for creating post
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. in Title field we type on letter of total name of post -> 'p'
+3. In Author field we pick 1st option -> 'Polaznik Kursa '
+4. In Category we choose option which we use for creating post -> 'Default Post Category NE BRISATI'
+5. In other fields we leave everything empty
+
+Expected result:
+We expect to see one post in list -> newPost
+
+Actual result 
+We have one post in list -> newPost
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC33
+
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , in Title field we type one letter which is not in include in name of post 
+in 'Author' field we pick 1st option -> 'Polaznik Kursa', in 'Category' we choose option which we use for creating post
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. in Title field we type on letter which is not in include in name of post -> 'q'
+3. In Author field we pick 1st option -> 'Polaznik Kursa '
+4. In Category we choose option which we use for creating post -> 'Default Post Category NE BRISATI'
+5. In other fields we leave everything empty
+
+Expected result:
+We dont expect to see one post in list 
+
+Actual result 
+We have empty list 
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC34
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , in Title field we type name of post in 'Author' field we pick
+1st option -> 'Polaznik Kursa', in 'Category' we choose another option
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. in Title field we type name of post
+3. In Author field we pick 1st option -> 'Polaznik Kursa '
+4. In Category we choose  another option
+5. In other fields we leave everything empty
+
+Expected result:
+We dont expect to see one post in list '
+
+Actual result 
+We have empty list 
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC35
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , in Title field we type name of post in 'Author' field we pick
+1st option -> 'Polaznik Kursa', in 'Category' we choose another option which we don't select yet 
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. in Title field we type name of post
+3. In Author field we pick 1st option -> 'Polaznik Kursa '
+4. In Category we choose another option which we don't select yet 
+5. In other fields we leave everything empty
+
+Expected result:
+We dont expect to see one post in list '
+
+Actual result 
+We have empty list 
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC36
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , in Title field we type name of post in 'Author' field we pick
+1st option -> 'Polaznik Kursa', in 'Category' we choose option which we create post, 'Important'->NO
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. in Title field we type name of post
+3. In Author field we pick 1st option -> 'Polaznik Kursa '
+4. In Category we choose option which we create post
+5. Important -> NO
+
+Expected result:
+We dont expect to see one post in list '
+
+Actual result 
+We have empty list 
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC37
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , in Title field we type name of post in 'Author' field we pick
+1st option -> 'Polaznik Kursa', in 'Category' we choose option which we create post, 'Important'->yes
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. in Title field we type name of post
+3. In Author field we pick 1st option -> 'Polaznik Kursa '
+4. In Category we choose option which we create post
+5. Important -> yes
+
+Expected result:
+We expect to see one post in list -> newPost
+
+Actual result 
+We have one post in list -> newPost
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC38
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , we leave all field empty beside 'Important' 
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. All field we keep empty
+5. Important -> NO
+
+Expected result:
+We dont expect to see one post in list '
+
+Actual result 
+We have empty list 
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+TC39
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , we leave all field empty beside 'Important' 
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. All field we keep empty
+5. Important -> yes
+
+Expected result:
+We dont expect to see one post in list '
+
+Actual result 
+We have empty list 
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+TC40
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , all fields we leave empty beside 'Category' 
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. All fields we leave empty
+3. Category choose one option which we use for creating post
+
+Expected result:
+We expect to see post (newPost) because it has parametar one parameter selected ('Category')
+
+Actual result 
+We have post (newPost) in list
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC41
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , all fields we leave empty beside 'Author' 
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. All fields we leave empty
+3. Author choose one option which we use for creating post -> 'Polaznik Kursa'
+
+Expected result:
+We expect to see post (newPost) because it has one parameter selected ('Author') and one more post which we called postPhoto
+
+Actual result 
+We have post (newPost) and postPhoto in a list
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC42
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , all fields we leave empty beside 'Status' 
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. All fields we leave empty
+3. 'Status' select 'Disabled'
+
+Expected result:
+We don't expect to see post (newPost) because it has Status -> Disabled, and we create post with 'Enabled'
+
+Actual result 
+We don't have post in list
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC43
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , all fields we leave empty beside 'Status' 
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. All fields we leave empty
+3. 'Status' select 'Enabled'
+
+Expected result:
+We expect to see post (newPost) because it has one parameter selected ('Status')
+
+Actual result 
+We have post (newPost) in list
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC44
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , all fields we put all the values in field besides status
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. Author section we pick 'Polaznik Kursa'
+3. Pick right 'Category' -> option 1
+4. Important section -> we choose 'yes' 
+5. 'Status' select 'Disabled'
+
+Expected result:
+We don't expect to see post (newPost) or some other post which we create because it has Status -> Disabled, and we create posts with 'Enabled'
+
+Actual result 
+We don't have post in list
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC45
+
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , all fields we put all the values 
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. Author section we pick 'Polaznik Kursa'
+3. Pick right 'Category' -> option 1
+4. Important section -> we choose 'yes' 
+5. 'Status' select 'enabled'
+
+Expected result:
+We expect to see post (newPost) because it has one parameter selected ('Status')
+
+Actual result 
+We have post (newPost) in list
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC46
+
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts we set value for incorect for 'Author' and  correct for 'Status'
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. In 'Author' we select value which is not correct -> 'Marko Dragonjic'	
+3. 'Status' select 'Enabled'
+
+Expected result:
+We don't expect to see post (newPost) 
+
+Actual result 
+We don't have post in list
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC47
+
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts we set value for correct for 'Author' and  incorrect for 'Status'
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. In 'Author' we select proper value (Polaznik kursa)
+3. 'Status' select 'Disabled'
+
+Expected result:
+We don't expect to see post (newPost) 
+
+Actual result 
+We don't have post in list
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC48
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts we set value for correct for 'Author' and  correct for 'Status'
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. In 'Author' we select proper value (Polaznik kursa)
+3. 'Status' select 'Enabled'
+
+Expected result:
+We expect to see post (newPost) because it has one parameter selected ('Status')
+
+Actual result 
+We have post (newPost) in list
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC49
+
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts we set value for correct for 'Author' and 'Category' and incorrect 
+value for 'Status'
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. In 'Author' we select proper value (Polaznik kursa)
+3. In 'Category' we choose option which we use for creating post
+4. 'Status' select 'Disabled'
+
+Expected result:
+We don't expect to see post (newPost) 
+
+Actual result 
+We don't have post in list
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC50
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts we set value for correct for 'Author' and 'Category' and correct 
+value for 'Status'
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. In 'Author' we select proper value (Polaznik kursa)
+3. In 'Category' we choose option which we use for creating post (Default Post ...)
+4. 'Status' select 'Enabled'
+
+Expected result:
+We expect to see post (newPost) 
+
+Actual result 
+We have post (newPost) in list
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC51
+
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts we set value for correct for 'Author' and for 'Status' , for 'Category'
+we dont select anything which is define as 'UNCATEGORIZED'
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. In 'Author' we select proper value (Polaznik kursa)
+3. In 'Category' we dont select anything which is define as 'UNCATEGORIZED'
+4. 'Status' select 'Enabled'
+
+Expected result:
+We expect to see post (newPost) because 'UNCATEGORIZED' is like netrual value.
+
+Actual result 
+We have post (newPost) in list
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC52
+
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , we leave all fields empty , besides field 'With Tag'
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. click on 'With Tag' -> choose any that we haven't created a post with
+
+Expected result:
+We don't expect to see post (newPost) 
+
+Actual result 
+We don't have post in list
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC53
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , we leave all fields empty , besides field 'With Tag'
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. click on 'With Tag' -> choose one which we use for creating post
+
+Expected result:
+We expect to see  2 post -> (postPhoto and one more which have included all tags)
+
+Actual result 
+We have 2post in post list
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC54
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , we leave all fields empty , besides field 'With Tag'
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. click on 'With Tag' -> choose any that we haven't created a post with and one which we create post
+
+Expected result:
+We expect to see post (newPost) because 'With Tag' have conditional behaviour.
+
+Actual result 
+We have post (newPost) in list 'With Tag'  we have conditional behaviour, one of selected tags is our tag which we create for newPost.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC55
+
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , we put all correct values in fields, only we attach with wrong tag
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. In 'Author' enter 'Polaznik Kursa;
+3. In 'Category'  go with 'Default Post Category NE BRISATI'
+4. Important -> yes
+5. Status -> enabled
+6. With Tag -> attach different then we create with
+
+Expected result:
+We don't expect to see post (newPost) 
+
+Actual result 
+We don't have post in list 
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC56
+
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , we put all correct values in fields,  we attach with right tag
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. In 'Author' enter 'Polaznik Kursa;
+3. In 'Category'  go with 'Default Post Category NE BRISATI'
+4. Important -> NO
+5. Status -> enabled
+6. With Tag -> attach correct tag
+
+Expected result:
+We expect to see post (newPost) 
+
+Actual result 
+We have post (newPost) in list
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC57
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts,we put all correct values in fields, only in 'IMPORTANT' we click on 'NO'
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. In 'Author' enter 'Polaznik Kursa;
+3. In 'Category'  go with 'Default Post Category NE BRISATI'
+4. Important -> 'no'
+5. Status -> enabled
+6. With Tag -> attach correct tag
+
+Expected result:
+We don't expect to see post (newPost) 
+
+Actual result 
+We don't have post in list
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC58
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts, we keep empty all fields, only in 'With Tag' we choose every possible
+tag.
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. All fields keep empty
+3. With Tag -> attach all tags
+
+Expected result:
+We expect to see a post which we create with all possible tags attached
+
+Actual result 
+Actualy we get all post in list which we created during these automation test
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC59
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts, we type in 'Search' field in we enter some part of name  post
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. In field 'Search' we enter the part of the name that we entered as the name
+
+Expected result:
+We expect to see a post 
+
+Actual result 
+We get only that tag in list
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC60
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts, we click on uptdate for uptdatedPost -> click on 'Cancel'
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. We click on update for uptdatedPost 
+3. We click rename post with name text :"Menjamo naziv prvog posta zbog testiranja"
+3. Click on 'Cancel' on page https://testblog.kurs-qa.cubes.edu.rs/admin/posts/edit/
+
+Expected result:
+We expect to see a post with old/same name
+
+Actual result 
+We get post with old/same name
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC61
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts, we click on 'disable' for newPost -> click on Cancel'Disable' 
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. We click on 'disable' for newPost
+3. Click on 'Disable Cancel' in Disable window
+
+Expected result:
+We expect to see a post 
+
+Actual result 
+We get post as disabled
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC62
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts, we click on 'disable' for newPost -> click on 'Disable' Save
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. We click on 'disable' for newPost
+3. Click on 'Disable and on 'Disable' in Disable window
+
+Expected result:
+We expect post to be disabled
+
+Actual result 
+We get post as disabled
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+TC63
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts, we click on 'disable' to see if the post is on the list
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. We click on 'disabled' in 'Status' option
+
+
+Expected result:
+We expect to see only post which is disabled (we set one post as disabled in previous tc(tc62))
+
+Actual result 
+We get one post as disabled -> newPost
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+TC64
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts,we click on 'Set as UnImportant post' for postPhoto -> click on 'Cancel'
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. We click on 'Set as UnImportant post' for postPhoto
+3. Click on 'Cancel' in Set as UnImportant post window
+
+Expected result:
+We expect to see a post as important
+
+Actual result 
+postPhoto stay as important
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC65
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts, we click on 'Important' field 
+'Set as Unimportant'
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+2. We  click on 'Important' field and set value to 'yes'
+
+
+Expected result:
+We expect to see PostPhoto  as important
+
+Actual result 
+We get PostPhoto as important -> stay as it was
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC66 
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , we click for PostPhoto on setUnimportant post
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts\
+2. we click for PostPhoto on setUnimportant post
+3. we confirm PostPhoto as Unimportant post
+
+
+Expected result:
+We expect to bee on URL //testblog.kurs-qa.cubes.edu.rs/admin/posts\ -> postList 
+
+Actual result 
+We are in PostList url -> //testblog.kurs-qa.cubes.edu.rs/admin/posts\
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC67
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , in section 'Important' we pick 'no'
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts\
+2. in section 'Important' we pick no 
+
+
+Expected result:
+We  expect to se PostPhoto because in previous tc66 we are setting as 'no'
+
+Actual result 
+We have PostPhoto in list 
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+TC68
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , we click on delete button for 'PostPhoto'
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts\
+2. click on delete button for 'PostPhoto'
+3. in delete window we click on 'Cancel'
+
+
+Expected result:
+We expect to se PostPhoto on list
+
+Actual result 
+We have PostPhoto on list
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+TC69
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , we click on delete button for 'PostPhoto'
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts\
+2. click on delete button for 'PostPhoto'
+3. in delete window we click on 'Delete'
+
+
+Expected result:
+We don't expect to se PostPhoto on list
+
+Actual result 
+We don't have PostPhoto on the list
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+TC70
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , we want click on update for updatePost
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts\
+2. click on update for updatePost
+3. Put new name in  'Title' field
+4. click on cancel
+
+
+Expected result:
+We expect to se newPost with same title as earlier
+
+Actual result 
+We have newPost with same title
+---------------------------------------------------------------------------------------------------------------------------------------------
+TC71
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , we want click on update for updatePost
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts\
+2. click on update for updatePost
+3. Put new name in  'Title' field -> "Ovo je drugi demo Post 1000"
+4. click on save
+
+
+Expected result:
+We expect to se updatePost with change title name
+
+Actual result 
+We have updatePost with new title name , we check are we on good URL
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+TC72
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , we are searching post by type in 'Title' box
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts\
+2. we are searching post by type in 'Title' box -> "Ovo je"
+
+
+Expected result:
+We expect to se updatedPost in list
+
+Actual result 
+We have updatePost in post list by typing "Ovo je" in search by title field
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC73
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , we want click on update for newPost 
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts\
+2. click on update newPost
+3. we are insert new description for newPost
+4. Click on 'Cancel'
+
+
+Expected result:
+We expect to se newPost in list with same settings as previous
+
+Actual result 
+We have newPost with same settings as previous
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC74
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , we want click on update on newPost to post description
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts\
+2. click on update for newPost
+3. change  description for newPost by typing : "Ovo je novi description za nov post koji smo izmenili. Ovo je sve u svrsi testiranja -> demo testing"
+4. Click on 'Save'
+
+
+Expected result:
+We expect to se newPost with new description.
+
+Actual result 
+We have newPost with new description , on postList URL
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC75
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , we want click on update on newPost to change important value
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts\
+2. we want click on 'set as Important Post' on newPost to change important value
+3. Click on Cancel
+
+
+Expected result:
+We expect to se newPost without any change
+
+Actual result 
+We have newPost with seting as previous
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC76
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , we are setting 'yes' in important field
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts\
+2. we are setting 'yes' in important field
+
+
+
+Expected result:
+We expect to se newPost in list with setting 'yes' in important field
+
+Actual result 
+We have newPost newPost in list with setting 'yes' in important field
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC77
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , we are click 'Set as Unimportant Post' for newPost
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts\
+2. we are click 'Set as Unimportant Post' for newPost
+3. we are confirm newPost as 'Unimportant Post'
+
+Expected result:
+We expect to be on POST LIST URL -> https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+
+Actual result 
+We are in good URL -> https://testblog.kurs-qa.cubes.edu.rs/admin/posts
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC78
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , we set in Important field value to 'no'
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts\
+2.  we set in Important field value to 'no'
+
+
+
+Expected result:
+We expect to se newPost in list because we are set in previous tc newPost to as 'Unimportant Post'
+
+Actual result 
+We have newPost in list because as 'Unimportant Post'
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC79
+
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , we want click on update for newPost 
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts\
+2. click on update for newPost
+3. In Tag selection we are select all possible tags
+4. Click on Save
+
+
+Expected result:
+We expect to stay be on page https://testblog.kurs-qa.cubes.edu.rs/admin/posts\ 
+
+Actual result 
+We are in page https://testblog.kurs-qa.cubes.edu.rs/admin/posts\ 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC80
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts, in field 'With Tag' we select all tags
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts\
+2. in field 'With Tag' we select all tags
+
+
+Expected result:
+We expect see newPost in list with all selected tags
+
+Actual result 
+We are getting newPost in list with all selected tags
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC81
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , we want click on update for newPost 
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts\
+2. click on update for newPost
+3. in 'Choose New Photo' we are adding new photo 
+4. Click on 'Cancel'
+
+
+Expected result:
+We expect to stay be on page https://testblog.kurs-qa.cubes.edu.rs/admin/posts\ , with newPost in list without added photo
+
+Actual result 
+We are in page https://testblog.kurs-qa.cubes.edu.rs/admin/posts\ , with newPost in list.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC82
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , we want click on update for newPost to add new photo with PNEG file
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts\
+2. click on update for newPost
+3. in 'Choose New Photo' we are adding new photo PNEG file
+4. Click on 'Save'
+
+
+Expected result:
+We expect to stay be on page https://testblog.kurs-qa.cubes.edu.rs/admin/posts\ , with newPost in list with added photo
+
+Actual result 
+We are in page https://testblog.kurs-qa.cubes.edu.rs/admin/posts\ , with newPost in list and with added photo
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC83
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , we want click on update for newPost 
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts\
+2. click on update for newPost
+3. in Content section/ frame enter new content -> "Novi kontent ubacen !!!"
+4. Click on 'Save'
+
+
+Expected result:
+We expect to stay be on page https://testblog.kurs-qa.cubes.edu.rs/admin/posts\ , with newPost in list 
+
+Actual result 
+We are in page https://testblog.kurs-qa.cubes.edu.rs/admin/posts\ , with newPost in list and with new different content
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC84
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , we want click on update for newPost 
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts\
+2. click on update for newPost
+3. in title field we enter empty string 
+4. Click on 'Save'
+
+
+Expected result:
+We expect to see error message "This field is required."
+
+Actual result 
+We are getting error message -> "This field is required."
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+TC85
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , we click on delete button for 'PostPhoto'
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts\
+2. click on delete button for 'PostPhoto'
+3. in delete window we click on 'Delete'
+
+
+Expected result:
+We don't expect to se PostPhoto on list
+
+Actual result 
+We don't have PostPhoto on the list (durring automation we create two PostPhoto post-> because it allowes us to insert two same names
+(PostPhoto) for names of post.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC86
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , we click on delete button for 'newPost'
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts\
+2. click on delete button for 'newPost'
+3. in delete window we click on 'Delete'
+
+
+Expected result:
+We don't expect to se newPost on list
+
+Actual result 
+We don't have newPost in the list
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC87
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts , we click on delete button for "Ovo je drugi demo Post 1000"
+
+Steps:
+1. go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts\
+2. click on delete button for "Ovo je drugi demo Post 1000"
+3. in delete window we click on 'Delete'
+
+
+Expected result:
+We don't expect to se "Ovo je drugi demo Post 1000" on list
+
+Actual result 
+We don't have "Ovo je drugi demo Post 1000" in the list
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

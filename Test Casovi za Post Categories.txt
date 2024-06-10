@@ -1,0 +1,264 @@
+Test Casovi za Post Categories   (Dragan Stojilkovic)
+
+TC01  
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories (url Post Categories List) we click on 'Add New Category', insert
+empty string "" in field 'Name', click on 'Cancel'
+
+Steps:
+1. go to https:https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories
+2. we click on 'Add New Category'
+3. In field 'Name' we insert empty string ""
+4. Click on 'Cancel'
+
+
+Expected result:
+We expect to be on URL https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories
+
+Actual result:
+We are in on URL https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+TC02  
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories (url Post Categories List) we click on 'Add New Category', insert
+empty string "" in field 'Name', click on 'Save'
+
+
+Steps:
+1. go to https:https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories
+2. we click on 'Add New Category'
+3. In field 'Name' we insert empty string ""
+4. Click on 'Cancel'
+
+
+Expected result:
+We expect to be on URL https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories/add, and get error message
+
+Actual result:
+We are in on  URL https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories/add, and get error message : "This field is required."
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC 03
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories (url Post Categories List) we click on 'Add New Category', insert
+empty string random name in field 'name' , click on 'Cancel'
+
+
+Steps:
+1. go to https:https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories
+2. we click on 'Add New Category'
+3. In field 'Name' we insert random name
+4. Click on 'Cancel'
+
+
+Expected result:
+We expect to be on URL https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories
+
+Actual result:
+We are in on  URL https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC 04
+
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories (url Post Categories List) we click on 'Add New Category', insert
+empty string random name in field 'name' , click on 'Save'
+
+
+Steps:
+1. go to https:https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories
+2. we click on 'Add New Category'
+3. In field 'Name' we insert random name
+4. Click on 'Save'
+
+
+Expected result:
+We expect to be on URL https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories/add, and to get error message for leaving empty
+Post description field
+
+Actual result:
+We are in on  URL https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories/add, and to get error message for leaving empty
+Post description field
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC 05
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories (url Post Categories List) we click on 'Add New Category', insert
+ random name in field 'name' , insert random description of 10 characters,  click on 'Save'
+
+
+Steps:
+1. go to https:https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories
+2. we click on 'Add New Category'
+3. in field 'Name' we insert random name
+4. in description field we enter 10 characters
+5. we are going click on 'Save'
+
+
+Expected result:
+We expect to be on URL https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories/add, and to get error message for not enough character
+
+
+Actual result:
+We are in on  URL https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories/add, and we get error message for not enough character 
+"The description must be at least 50 characters."
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC 06
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories (url Post Categories List) we click on 'Add New Category', insert
+'newPostCategoryName , insert random description of 49characters,  click on 'Save'
+
+
+Steps:
+1. go to https:https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories
+2. we click on 'Add New Category'
+3. in field 'Name' we insert newPostCategoryName
+4. in description field we enter 49 characters
+5. we are going click on 'Save'
+
+
+Expected result:
+We expect to be on URL https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories/add, and to get error message for not enough character
+
+
+Actual result:
+We are in on  URL https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories/add, and we get error message for not enough character 
+"The description must be at least 50 characters." Here we try boundary testing
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC 07
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories (url Post Categories List) we click on 'Add New Category', insert
+empty string "" on 'name' field , insert random description of 50 characters,  click on 'Save'
+
+
+Steps:
+1. go to https:https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories
+2. we click on 'Add New Category'
+3. in field 'Name' we insert ""
+4. in description field we enter 50 characters
+5. we are going click on 'Save'
+
+
+Expected result:
+We expect to be on URL https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories/add, and to get error message for not puting anything in 
+name field
+
+
+Actual result:
+We are in on  URL https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories/add, and we get error message for empty 'name' field
+"This field is required."
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TC 08
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories (url Post Categories List) we click on 'Add New Category', in 
+field 'Name' we enter  newPostCategoryName, insert random description of 50 characters,  click on 'Save'
+
+Steps:
+1. go to https:https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories
+2. we click on 'Add New Category'
+3. in field 'Name' we enter newPostCategoryName
+4. in description field we enter rando, 50 characters
+5. we are going click on 'Save'
+
+
+Expected result:
+We expect to create newPostCategory 
+
+
+Actual result:
+We succeeded to create post category with name-> newPostCategory.
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC 09
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories (url Post Categories List) we click on 'Add New Category', in 
+field 'Name' we enter  updatedPostCategoryName, insert random description of 300 characters,  click on 'Save'
+
+Steps:
+1. go to https:https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories
+2. we click on 'Add New Category'
+3. in field 'Name' we enter updatedPostCategoryName
+4. in description field we enter random 300 characters (Our goal here is to see if there is set any value for maximum characters)
+5. we are going click on 'Save'
+
+
+Expected result:
+We expect to create updatedPostCategoryName
+
+
+Actual result:
+We succeeded to create post category with name-> updatedPostCategoryName with 300 characters in description field. We did not get any notice or
+error for that.
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC 10
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories  we click on update button for newPostCategoryName, in field
+'Name' we enter empty string "" , click on 'Cancel'
+
+Steps:
+1. go to https:https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories
+2. we click on on update button for newPostCategoryName
+3. in field 'Name' we enter empty string
+4. click on 'Cancel'
+
+
+Expected result:
+We expect to be on URL https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories, without making any change
+
+
+Actual result:
+We are on URL https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories, with no change for newPostCategoryName
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC 11
+
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories  we click on update button for newPostCategoryName, in field
+'Name' we enter "test" , we insert new description,  click on 'Cancel'
+
+Steps:
+1. go to https:https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories
+2. we click on on update button for newPostCategoryName
+3. in field 'Name' we enter 'test'
+4. in field description we insert description which we use for creating updatedPostCategoryName (updatedPostCategoryDescription)
+5. click on 'Cancel'
+
+
+Expected result:
+We expect to be on URL https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories, without making any change
+
+
+Actual result:
+We are on URL https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories, with no change for newPostCategoryName
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+TC 12
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories  we click on update button for newPostCategoryName, in field
+'Name' we enter "" , click on 'Save'
+
+Steps:
+1. go to https:https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories
+2. we click on on update button for newPostCategoryName
+3. in field 'Name' we clear previous name and enter empty string ""
+4. click on 'Save'
+
+
+Expected result:
+We expect to get error because we update post category name with empty string 
+
+
+Actual result:
+We are getting error message for name field.
+----------------------------------------------------------------------------------------------------------------------------------------------
+TC 13
+
+Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories  we click on update button for newPostCategoryName, we want to
+see are we in good page 
+
+Steps:
+1. go to https:https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories
+2. we click on on update button for newPostCategoryName
