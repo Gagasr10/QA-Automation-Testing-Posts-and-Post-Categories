@@ -1,4 +1,4 @@
-Test Casovi za Post Categories   (Dragan Stojilkovic)
+Test Cases for Post Categories   (Dragan Stojilkovic)
 
 TC01  
 Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/post-categories (url Post Categories List) we click on 'Add New Category', insert
