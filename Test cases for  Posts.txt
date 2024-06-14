@@ -1,4 +1,4 @@
-ADD POST -> PISANJE TC
+Test cases for Posts
 
 TC01  
 Description: go to https://testblog.kurs-qa.cubes.edu.rs/admin/posts/add , insert empty "" in every possible column.. in Tag section 
